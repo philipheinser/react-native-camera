@@ -115,7 +115,7 @@ class RCTCameraViewFinder extends TextureView implements TextureView.SurfaceText
                 _camera.setPreviewTexture(_surfaceTexture);
                 _camera.startPreview();
                 _camera.setOneShotPreviewCallback(this);
- +              _barcodeReader = new BarcodeReader();
+               _barcodeReader = new BarcodeReader();
             } catch (NullPointerException e) {
                 e.printStackTrace();
             } catch (Exception e) {
@@ -138,8 +138,8 @@ class RCTCameraViewFinder extends TextureView implements TextureView.SurfaceText
                     _camera = null;
                 }
                 if (_barcodeReader != null) {
- +                _barcodeReader.stop();
- +              }
+                 _barcodeReader.stop();
+               }
 
             } catch (Exception e) {
                 e.printStackTrace();
